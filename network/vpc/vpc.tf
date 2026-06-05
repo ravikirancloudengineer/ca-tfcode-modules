@@ -37,8 +37,8 @@ resource "aws_iam_role_policy" "logs_permissions" {
       "Action": ["logs:CreateLogGroup","logs:CreateLogStream", "logs:PutLogEvents", "logs:DescribeLogGroups","logs:DescribeLogStreams", "logs:DeleteLogDelivery"],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:logs:${data.aws_region.current.id}:*:log-group:${local.project_name}-${local.environment}-${aws_vpc.vpc.id}-vpc-flow-logs*",
-        "arn:aws:logs:${data.aws_region.current.id}:*:log-group:${local.project_name}-${local.environment}-${aws_vpc.vpc.id}-vpc-flow-logs*:log-stream:*"
+        "arn:aws:logs:${data.aws_region.current.region}:*:log-group:${local.project_name}-${local.environment}-${aws_vpc.vpc.id}-vpc-flow-logs*",
+        "arn:aws:logs:${data.aws_region.current.region}:*:log-group:${local.project_name}-${local.environment}-${aws_vpc.vpc.id}-vpc-flow-logs*:log-stream:*"
 
       ]
   }]
